@@ -195,7 +195,7 @@ ggCtreeReg <- function(fit, type = c("wisker","ridges"),
     
     p2 <- nodes_pred %>%
       ggplot(aes(y=node)) +
-      geom_errorbarh(aes(y = node, xmin =`10%`, xmax = `90%`)) +
+      geom_errorbarh(aes(x = xadj, y = node, xmin =`10%`, xmax = `90%`)) +
       geom_point(aes(x = pred), fill = "red", shape = 21, size = 4) + 
       geom_text(aes(x =`90%`, label = paste("  n =",n)), 
                 fontface = "italic",  size = 2.5, hjust = 0,
